@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  comfyui:
+    build:
+      context: ..
+      dockerfile: docker/comfy.dockerfile
+    image: comfy-ui:latest
+    ports:
+      - "8188:8188"
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
