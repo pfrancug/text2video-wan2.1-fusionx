@@ -1,0 +1,17 @@
+tools/*
+!tools/overrides
+
+tools/overrides/custom_nodes/*
+!tools/overrides/custom_nodes/.gitkeep
+
+tools/overrides/models/diffusion_models/*
+!tools/overrides/models/diffusion_models/.gitkeep
+
+tools/overrides/models/loras/*
+!tools/overrides/models/loras/.gitkeep
+
+tools/overrides/models/text_encoders/*
+!tools/overrides/models/text_encoders/.gitkeep
+
+tools/overrides/models/vae/*
+!tools/overrides/models/vae/.gitkeep
