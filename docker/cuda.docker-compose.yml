@@ -1,0 +1,9 @@
+version: "3.9"
+
+services:
+  cuda-base:
+    build:
+      context: ..
+      dockerfile: docker/cuda.dockerfile
+    image: cuda-python:13.0-py3.11
+
