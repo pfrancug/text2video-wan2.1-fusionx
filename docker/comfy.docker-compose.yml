@@ -6,6 +6,10 @@ services:
       context: ..
       dockerfile: docker/comfy.dockerfile
     image: comfy-ui:latest
+    container_name: comfyui
+    volumes:
+      - ../tools/overrides/models:/app/ComfyUI/models
+      - ../tools/overrides/user:/app/ComfyUI/user
     ports:
       - "8188:8188"
     runtime: nvidia
