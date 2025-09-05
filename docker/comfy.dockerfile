@@ -18,17 +18,19 @@ WORKDIR /app/ComfyUI
 # Copy requirements files first to leverage Docker cache for dependencies
 # --------------------------
 COPY tools/ComfyUI/requirements.txt .
+COPY tools/overrides/packages.txt .
 
 # --------------------------
 # Install Python dependencies
 # --------------------------
 RUN python3 -m pip install --no-cache-dir --upgrade pip \
-    && python3 -m pip install --no-cache-dir -r requirements.txt
+    && python3 -m pip install --no-cache-dir -r requirements.txt -r packages.txt
 
 # --------------------------
 # Copy the main ComfyUI source code
 # --------------------------
 COPY tools/ComfyUI .
+COPY tools/overrides/custom_nodes ./custom_nodes
 
 # --------------------------
 # Expose the default ComfyUI port
